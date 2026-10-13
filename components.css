@@ -1,4 +1,4 @@
-/* Otra Mesa Design System 1.3.0 · shared components
+/* Otra Mesa Design System 1.4.0 · shared components
    Source: github.com/CepedaCamilo/otra-mesa-design-system · see CHANGELOG.md */
 
 .boton-google { display: flex; align-items: center; justify-content: center; gap: var(--e-10); width: 100%; min-height: var(--alto-control); padding: 0 var(--e-16); border-radius: var(--radio-pildora);

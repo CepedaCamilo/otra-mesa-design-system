@@ -3,7 +3,7 @@
 The design system behind [Otra Mesa](https://otramesa.danies.trade), a food-rescue platform for restaurants
 in Barranquilla, Colombia: a customer app, a business portal and a back office, all built on these tokens.
 
-**Version 1.3.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
+**Version 1.4.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
 
 Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com), product and brand designer in Hamburg.
 
@@ -120,6 +120,33 @@ Token names are in **Spanish**, the language the product is built in. The tables
 | `--sombra-flotante` | floating shadow | `0 6px 24px rgb(31 46 38 / 0.16)` | Booking bar, buttons over photos, toasts. |
 | `--sombra-mapa` | map shadow | `0 1px 6px rgb(31 46 38 / 0.35)` | Pins, clusters and buttons on the map. |
 
+### Charts
+
+| Token | Meaning | Value | Dark | Use |
+|---|---|---|---|---|
+| `--grafico-1` | chart 1 · green | ![](https://placehold.co/14x14/009456/009456.png) `#009456` | ![](https://placehold.co/14x14/22a56a/22a56a.png) `#22a56a` | First series. Categories always take slots in this fixed order. |
+| `--grafico-2` | chart 2 · sea | ![](https://placehold.co/14x14/325ac2/325ac2.png) `#325ac2` | ![](https://placehold.co/14x14/5981e0/5981e0.png) `#5981e0` | Second series. |
+| `--grafico-3` | chart 3 · terracotta | ![](https://placehold.co/14x14/e15f0a/e15f0a.png) `#e15f0a` | ![](https://placehold.co/14x14/dc692e/dc692e.png) `#dc692e` | Third series. Maps and scatter plots stop here (max. 3). |
+| `--grafico-4` | chart 4 · turquoise | ![](https://placehold.co/14x14/009aa8/009aa8.png) `#009aa8` | ![](https://placehold.co/14x14/08a2af/08a2af.png) `#08a2af` | Fourth series. |
+| `--grafico-5` | chart 5 · mango | ![](https://placehold.co/14x14/dfa700/dfa700.png) `#dfa700` | ![](https://placehold.co/14x14/b3880f/b3880f.png) `#b3880f` | Fifth series. 2.2:1 on white: always with a visible label or a table. |
+| `--grafico-6` | chart 6 · bougainvillea | ![](https://placehold.co/14x14/cd4290/cd4290.png) `#cd4290` | ![](https://placehold.co/14x14/d15697/d15697.png) `#d15697` | Sixth series. A seventh category folds into "Other". |
+| `--grafico-escala-100` | scale 100 | ![](https://placehold.co/14x14/d3f1de/d3f1de.png) `#d3f1de` | same | Magnitude, one hue from light to dark. Near zero. |
+| `--grafico-escala-200` | scale 200 | ![](https://placehold.co/14x14/a5d9b9/a5d9b9.png) `#a5d9b9` | same |  |
+| `--grafico-escala-300` | scale 300 | ![](https://placehold.co/14x14/71be93/71be93.png) `#71be93` | same | Lightest step for separate marks on white (2.2:1). |
+| `--grafico-escala-400` | scale 400 | ![](https://placehold.co/14x14/3fa270/3fa270.png) `#3fa270` | same |  |
+| `--grafico-escala-500` | scale 500 | ![](https://placehold.co/14x14/158353/158353.png) `#158353` | same | Darkest step for separate marks on dark (3.5:1). |
+| `--grafico-escala-600` | scale 600 | ![](https://placehold.co/14x14/08633d/08633d.png) `#08633d` | same |  |
+| `--grafico-escala-700` | scale 700 | ![](https://placehold.co/14x14/004427/004427.png) `#004427` | same | Most. |
+
+### Status
+
+| Token | Meaning | Value | Use |
+|---|---|---|---|
+| `--estado-bien` | status good | ![](https://placehold.co/14x14/1f8a4c/1f8a4c.png) `#1f8a4c` | Reserved meaning. Always with an icon and a word, never colour alone. |
+| `--estado-aviso` | status warning | ![](https://placehold.co/14x14/c98a00/c98a00.png) `#c98a00` | Reserved meaning. Icon + word. |
+| `--estado-serio` | status serious | ![](https://placehold.co/14x14/d9622b/d9622b.png) `#d9622b` | Reserved meaning. Icon + word. |
+| `--estado-critico` | status critical | ![](https://placehold.co/14x14/c0392b/c0392b.png) `var(--peligro)` | Same as danger. Icon + word. |
+
 ## Contrast
 
 Calculated with the WCAG 2.2 formula from the values above. AA needs 4.5:1 for normal text and 3:1 for large text and icons.
@@ -134,6 +161,22 @@ Calculated with the WCAG 2.2 formula from the values above. AA needs 4.5:1 for n
 | White on sold-out grey | `--sobre-invertido` on `--agotado` | 4.9:1 | 4.5:1 | ✓ |
 | Danger text on background | `--peligro` on `--fondo` | 5.4:1 | 4.5:1 | ✓ |
 | White icon on terracotta | `--sobre-acento` on `--acento` | 3.5:1 | 3:1 | ✓ |
+
+## Charts
+
+The chart palette ("Caribe") was chosen on 13 October 2026 from three candidates, all derived from the brand green and terracotta.
+The brand green itself (`--marca`) is too muted for data (OKLCH chroma 0.083): next to other colours it reads as grey,
+so charts use a livelier green of the same hue.
+
+- **Fixed order, never cycled.** Series take `--grafico-1`, `-2`, `-3`… in order. The order is what keeps neighbours apart
+  for colour-blind readers. A seventh category folds into "Other".
+- **Validated, not eyeballed.** Simulated protanopia and deuteranopia (Machado, Oliveira & Fernandes 2009), OKLab ΔE×100:
+  worst neighbouring pair 18.3 in light mode and 14.7 in dark mode (target ≥ 8). Normal vision: 26.7 and 20.8 (floor ≥ 15).
+- **Maps and scatter plots: three colours at most.** There any two marks can sit side by side, so every pair must pass, not just neighbours.
+- **Magnitude uses one hue.** The green scale goes from light to dark; never a rainbow.
+- **Status colours are reserved** for good, warning, serious and critical, and always come with an icon and a word.
+- **Dark mode** (`<html data-tema="oscuro">`) keeps the same six hues with lightness tuned for the dark surface `#17201b`.
+  The customer app always stays light.
 
 ## Components
 

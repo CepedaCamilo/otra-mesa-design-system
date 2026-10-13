@@ -7,6 +7,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.4.0] · 2026-10-13
+
+### Added
+- **Chart palette "Caribe"**: six categorical colours in a fixed order, `--grafico-1` (green) · `-2` (sea) · `-3` (terracotta) ·
+  `-4` (turquoise) · `-5` (mango) · `-6` (bougainvillea). Chosen from three candidates derived from the brand colours.
+  Validated with simulated protanopia and deuteranopia: worst neighbouring pair ΔE 18.3 light / 14.7 dark (target ≥ 8).
+- **Magnitude scale** `--grafico-escala-100` … `-700`: one green hue from light to dark.
+- **Status colours** `--estado-bien`, `--estado-aviso`, `--estado-serio`, `--estado-critico` (= `--peligro`), always paired with icon and label.
+- **First dark-mode block** `:root[data-tema="oscuro"]` with the dark steps of the chart palette.
+  The rest of the dark palette follows in a later release. The customer app stays light.
+
+### Notes
+- The brand green `--marca` is not used in charts: its chroma (0.083) is too low and reads as grey next to other colours.
+- `--grafico-5` (mango) is 2.2:1 on white: always show a visible label or a table next to it.
+
 ## [1.3.0] · 2026-10-13
 
 First release as a **standalone package** and public repository. Values are identical to the
