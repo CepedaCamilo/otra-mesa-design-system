@@ -1,4 +1,4 @@
-/* Otra Mesa Design System 1.4.0 · shared components
+/* Otra Mesa Design System 1.5.0 · shared components
    Source: github.com/CepedaCamilo/otra-mesa-design-system · see CHANGELOG.md */
 
 .boton-google { display: flex; align-items: center; justify-content: center; gap: var(--e-10); width: 100%; min-height: var(--alto-control); padding: 0 var(--e-16); border-radius: var(--radio-pildora);
@@ -9,3 +9,14 @@
 
 .estrellas { color: var(--acento); letter-spacing: 1px; }
 .estrellas-vacias { color: var(--linea); }
+
+.boton-tema { color: var(--texto); cursor: pointer; border: 0; }
+.boton-tema.boton-tema--esquina { position: fixed; top: calc(env(safe-area-inset-top, 0px) + var(--e-12)); right: var(--e-12); z-index: 10; width: 44px; height: 44px; }
+
+:root[data-tema="oscuro"] .leaflet-control-attribution { background: rgb(15 22 18 / 0.92); color: var(--suave); }
+:root[data-tema="oscuro"] .leaflet-control-attribution a { color: var(--marca); }
+:root[data-tema="oscuro"] .leaflet-bar { border-color: var(--linea); }
+:root[data-tema="oscuro"] .leaflet-bar a { background: var(--superficie); color: var(--texto); border-color: var(--linea); }
+:root[data-tema="oscuro"] .leaflet-bar a:hover { background: var(--superficie-2); }
+:root[data-tema="oscuro"] .leaflet-popup-content-wrapper, :root[data-tema="oscuro"] .leaflet-popup-tip { background: var(--superficie); color: var(--texto); }
+:root[data-tema="oscuro"] .leaflet-container { background: var(--fondo); }

@@ -3,7 +3,7 @@
 The design system behind [Otra Mesa](https://otramesa.danies.trade), a food-rescue platform for restaurants
 in Barranquilla, Colombia: a customer app, a business portal and a back office, all built on these tokens.
 
-**Version 1.4.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
+**Version 1.5.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
 
 Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com), product and brand designer in Hamburg.
 
@@ -40,28 +40,28 @@ Token names are in **Spanish**, the language the product is built in. The tables
 
 ### Color
 
-| Token | Meaning | Value | Use |
-|---|---|---|---|
-| `--fondo` | background | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | Page background. |
-| `--superficie` | surface | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | Cards and panels, separated by a soft shadow. |
-| `--superficie-2` | surface 2 | ![](https://placehold.co/14x14/f3f4f2/f3f4f2.png) `#f3f4f2` | Very light grey with a hint of green: chips, photo placeholders, rating bars. |
-| `--linea` | line | ![](https://placehold.co/14x14/e6e8e5/e6e8e5.png) `#e6e8e5` | Hairlines and borders. |
-| `--marca` | brand | ![](https://placehold.co/14x14/2f6b4a/2f6b4a.png) `#2f6b4a` | Logo green: primary buttons and active states. |
-| `--titulo` | heading | ![](https://placehold.co/14x14/1f2e26/1f2e26.png) `#1f2e26` | Headings. Same as body text: one text colour. |
-| `--texto` | text | ![](https://placehold.co/14x14/1f2e26/1f2e26.png) `#1f2e26` | Body text. |
-| `--suave` | muted | ![](https://placehold.co/14x14/5b635f/5b635f.png) `#5b635f` | Secondary text. |
-| `--invertido` | inverted | ![](https://placehold.co/14x14/2f6b4a/2f6b4a.png) `#2f6b4a` | Filled areas in brand green. |
-| `--sobre-invertido` | on inverted | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | Text on brand green, valid at any size. |
-| `--acento` | accent | ![](https://placehold.co/14x14/d26e28/d26e28.png) `#d26e28` | Cheerful terracotta, for small details only: stars, underlines, small icons. |
-| `--sobre-acento` | on accent | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | Icons on terracotta (round photo buttons). Enough for icons and large text only. |
-| `--acento-suave` | accent soft | ![](https://placehold.co/14x14/f8dcc6/f8dcc6.png) `#f8dcc6` | Peach for small labels ("3 left"). |
-| `--sobre-acento-suave` | on accent soft | ![](https://placehold.co/14x14/8a4416/8a4416.png) `#8a4416` | Text on peach. |
-| `--acento-texto` | accent text | ![](https://placehold.co/14x14/a4521b/a4521b.png) `#a4521b` | Terracotta for small text. |
-| `--vegetariano` | vegetarian | ![](https://placehold.co/14x14/2f6b4a/2f6b4a.png) `#2f6b4a` | Vegetarian marker. Same as brand green. |
-| `--agotado` | sold out | ![](https://placehold.co/14x14/6b726e/6b726e.png) `#6b726e` | Sold-out grey, with white text on top. |
-| `--peligro` | danger | ![](https://placehold.co/14x14/c0392b/c0392b.png) `#c0392b` | Errors and destructive actions. |
-| `--velo-foto` | photo veil | `linear-gradient(to top, rgb(0 0 0 / 0.62), rgb(0 0 0 / 0) 70%)` | Gradient that makes white text readable on photos. |
-| `--filtro-planos` | map filter | `saturate(0.75) brightness(1.03)` | Softens the colours of the map tiles. |
+| Token | Meaning | Value | Dark | Use |
+|---|---|---|---|---|
+| `--fondo` | background | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | ![](https://placehold.co/14x14/0f1612/0f1612.png) `#0f1612` | Page background. |
+| `--superficie` | surface | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | ![](https://placehold.co/14x14/17201b/17201b.png) `#17201b` | Cards and panels, separated by a soft shadow. |
+| `--superficie-2` | surface 2 | ![](https://placehold.co/14x14/f3f4f2/f3f4f2.png) `#f3f4f2` | ![](https://placehold.co/14x14/202b25/202b25.png) `#202b25` | Very light grey with a hint of green: chips, photo placeholders, rating bars. |
+| `--linea` | line | ![](https://placehold.co/14x14/e6e8e5/e6e8e5.png) `#e6e8e5` | ![](https://placehold.co/14x14/2c3932/2c3932.png) `#2c3932` | Hairlines and borders. |
+| `--marca` | brand | ![](https://placehold.co/14x14/2f6b4a/2f6b4a.png) `#2f6b4a` | ![](https://placehold.co/14x14/6fbf92/6fbf92.png) `#6fbf92` | Logo green: primary buttons and active states. |
+| `--titulo` | heading | ![](https://placehold.co/14x14/1f2e26/1f2e26.png) `#1f2e26` | ![](https://placehold.co/14x14/e6ece8/e6ece8.png) `#e6ece8` | Headings. Same as body text: one text colour. |
+| `--texto` | text | ![](https://placehold.co/14x14/1f2e26/1f2e26.png) `#1f2e26` | ![](https://placehold.co/14x14/e6ece8/e6ece8.png) `#e6ece8` | Body text. |
+| `--suave` | muted | ![](https://placehold.co/14x14/5b635f/5b635f.png) `#5b635f` | ![](https://placehold.co/14x14/a4aea8/a4aea8.png) `#a4aea8` | Secondary text. |
+| `--invertido` | inverted | ![](https://placehold.co/14x14/2f6b4a/2f6b4a.png) `#2f6b4a` | ![](https://placehold.co/14x14/6fbf92/6fbf92.png) `#6fbf92` | Filled areas in brand green. |
+| `--sobre-invertido` | on inverted | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | ![](https://placehold.co/14x14/0e2117/0e2117.png) `#0e2117` | Text on brand green, valid at any size. |
+| `--acento` | accent | ![](https://placehold.co/14x14/d26e28/d26e28.png) `#d26e28` | ![](https://placehold.co/14x14/ee8a4a/ee8a4a.png) `#ee8a4a` | Cheerful terracotta, for small details only: stars, underlines, small icons. |
+| `--sobre-acento` | on accent | ![](https://placehold.co/14x14/ffffff/ffffff.png) `#ffffff` | ![](https://placehold.co/14x14/1d0f05/1d0f05.png) `#1d0f05` | Icons on terracotta (round photo buttons). Enough for icons and large text only. |
+| `--acento-suave` | accent soft | ![](https://placehold.co/14x14/f8dcc6/f8dcc6.png) `#f8dcc6` | ![](https://placehold.co/14x14/3e2a1b/3e2a1b.png) `#3e2a1b` | Peach for small labels ("3 left"). |
+| `--sobre-acento-suave` | on accent soft | ![](https://placehold.co/14x14/8a4416/8a4416.png) `#8a4416` | ![](https://placehold.co/14x14/f6bd94/f6bd94.png) `#f6bd94` | Text on peach. |
+| `--acento-texto` | accent text | ![](https://placehold.co/14x14/a4521b/a4521b.png) `#a4521b` | ![](https://placehold.co/14x14/f2a06a/f2a06a.png) `#f2a06a` | Terracotta for small text. |
+| `--vegetariano` | vegetarian | ![](https://placehold.co/14x14/2f6b4a/2f6b4a.png) `#2f6b4a` | ![](https://placehold.co/14x14/6fbf92/6fbf92.png) `#6fbf92` | Vegetarian marker. Same as brand green. |
+| `--agotado` | sold out | ![](https://placehold.co/14x14/6b726e/6b726e.png) `#6b726e` | ![](https://placehold.co/14x14/5c645f/5c645f.png) `#5c645f` | Sold-out grey, with white text on top. |
+| `--peligro` | danger | ![](https://placehold.co/14x14/c0392b/c0392b.png) `#c0392b` | ![](https://placehold.co/14x14/f2806f/f2806f.png) `#f2806f` | Errors and destructive actions. |
+| `--velo-foto` | photo veil | `linear-gradient(to top, rgb(0 0 0 / 0.62), rgb(0 0 0 / 0) 70%)` | same | Gradient that makes white text readable on photos. |
+| `--filtro-planos` | map filter | `saturate(0.75) brightness(1.03)` | `invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.55)` | Softens the colours of the map tiles. |
 
 ### Type
 
@@ -113,12 +113,12 @@ Token names are in **Spanish**, the language the product is built in. The tables
 
 ### Shadow
 
-| Token | Meaning | Value | Use |
-|---|---|---|---|
-| `--sombra` | shadow | `0 2px 12px rgb(31 46 38 / 0.09), 0 1px 2px rgb(31 46 38 / 0.06)` | Cards and panels. Always tinted with the text green. |
-| `--sombra-borde` | edge shadow | `0 -1px 0 var(--linea), 0 -6px 18px rgb(31 46 38 / 0.05)` | Bottom tab bar. |
-| `--sombra-flotante` | floating shadow | `0 6px 24px rgb(31 46 38 / 0.16)` | Booking bar, buttons over photos, toasts. |
-| `--sombra-mapa` | map shadow | `0 1px 6px rgb(31 46 38 / 0.35)` | Pins, clusters and buttons on the map. |
+| Token | Meaning | Value | Dark | Use |
+|---|---|---|---|---|
+| `--sombra` | shadow | `0 2px 12px rgb(31 46 38 / 0.09), 0 1px 2px rgb(31 46 38 / 0.06)` | `0 0 0 1px var(--linea)` | Cards and panels. Always tinted with the text green. |
+| `--sombra-borde` | edge shadow | `0 -1px 0 var(--linea), 0 -6px 18px rgb(31 46 38 / 0.05)` | `0 -1px 0 var(--linea)` | Bottom tab bar. |
+| `--sombra-flotante` | floating shadow | `0 6px 24px rgb(31 46 38 / 0.16)` | `0 0 0 1px var(--linea), 0 8px 28px rgb(0 0 0 / 0.5)` | Booking bar, buttons over photos, toasts. |
+| `--sombra-mapa` | map shadow | `0 1px 6px rgb(31 46 38 / 0.35)` | `0 1px 6px rgb(0 0 0 / 0.6)` | Pins, clusters and buttons on the map. |
 
 ### Charts
 
@@ -140,27 +140,41 @@ Token names are in **Spanish**, the language the product is built in. The tables
 
 ### Status
 
-| Token | Meaning | Value | Use |
-|---|---|---|---|
-| `--estado-bien` | status good | ![](https://placehold.co/14x14/1f8a4c/1f8a4c.png) `#1f8a4c` | Reserved meaning. Always with an icon and a word, never colour alone. |
-| `--estado-aviso` | status warning | ![](https://placehold.co/14x14/c98a00/c98a00.png) `#c98a00` | Reserved meaning. Icon + word. |
-| `--estado-serio` | status serious | ![](https://placehold.co/14x14/d9622b/d9622b.png) `#d9622b` | Reserved meaning. Icon + word. |
-| `--estado-critico` | status critical | ![](https://placehold.co/14x14/c0392b/c0392b.png) `var(--peligro)` | Same as danger. Icon + word. |
+| Token | Meaning | Value | Dark | Use |
+|---|---|---|---|---|
+| `--estado-bien` | status good | ![](https://placehold.co/14x14/1f8a4c/1f8a4c.png) `#1f8a4c` | ![](https://placehold.co/14x14/3fb873/3fb873.png) `#3fb873` | Reserved meaning. Always with an icon and a word, never colour alone. |
+| `--estado-aviso` | status warning | ![](https://placehold.co/14x14/c98a00/c98a00.png) `#c98a00` | ![](https://placehold.co/14x14/e0a526/e0a526.png) `#e0a526` | Reserved meaning. Icon + word. |
+| `--estado-serio` | status serious | ![](https://placehold.co/14x14/d9622b/d9622b.png) `#d9622b` | ![](https://placehold.co/14x14/ee8a4a/ee8a4a.png) `#ee8a4a` | Reserved meaning. Icon + word. |
+| `--estado-critico` | status critical | ![](https://placehold.co/14x14/c0392b/c0392b.png) `var(--peligro)` | ![](https://placehold.co/14x14/f2806f/f2806f.png) `var(--peligro)` | Same as danger. Icon + word. |
 
 ## Contrast
 
 Calculated with the WCAG 2.2 formula from the values above. AA needs 4.5:1 for normal text and 3:1 for large text and icons.
 
+**Light**
+
 | Pair | Tokens | Ratio | Needs | AA |
 |---|---|---|---|---|
 | Body text on background | `--texto` on `--fondo` | 14.2:1 | 4.5:1 | ✓ |
 | Secondary text on background | `--suave` on `--fondo` | 6.2:1 | 4.5:1 | ✓ |
-| White on brand green (buttons) | `--sobre-invertido` on `--marca` | 6.3:1 | 4.5:1 | ✓ |
+| Text on primary button | `--sobre-invertido` on `--marca` | 6.3:1 | 4.5:1 | ✓ |
 | Terracotta text on background | `--acento-texto` on `--fondo` | 5.5:1 | 4.5:1 | ✓ |
 | Text on peach labels | `--sobre-acento-suave` on `--acento-suave` | 5.5:1 | 4.5:1 | ✓ |
-| White on sold-out grey | `--sobre-invertido` on `--agotado` | 4.9:1 | 4.5:1 | ✓ |
+| White on sold-out grey | `#ffffff` on `--agotado` | 4.9:1 | 4.5:1 | ✓ |
 | Danger text on background | `--peligro` on `--fondo` | 5.4:1 | 4.5:1 | ✓ |
 | White icon on terracotta | `--sobre-acento` on `--acento` | 3.5:1 | 3:1 | ✓ |
+
+**Dark**
+
+| Pair | Tokens | Ratio | Needs | AA |
+|---|---|---|---|---|
+| Body text on background | `--texto` on `--fondo` | 15.3:1 | 4.5:1 | ✓ |
+| Secondary text on background | `--suave` on `--fondo` | 8.0:1 | 4.5:1 | ✓ |
+| Text on primary button | `--sobre-invertido` on `--marca` | 7.6:1 | 4.5:1 | ✓ |
+| Terracotta text on background | `--acento-texto` on `--fondo` | 8.8:1 | 4.5:1 | ✓ |
+| Text on peach labels | `--sobre-acento-suave` on `--acento-suave` | 8.1:1 | 4.5:1 | ✓ |
+| White on sold-out grey | `#ffffff` on `--agotado` | 6.1:1 | 4.5:1 | ✓ |
+| Danger text on background | `--peligro` on `--fondo` | 7.1:1 | 4.5:1 | ✓ |
 
 ## Charts
 
@@ -175,8 +189,16 @@ so charts use a livelier green of the same hue.
 - **Maps and scatter plots: three colours at most.** There any two marks can sit side by side, so every pair must pass, not just neighbours.
 - **Magnitude uses one hue.** The green scale goes from light to dark; never a rainbow.
 - **Status colours are reserved** for good, warning, serious and critical, and always come with an icon and a word.
-- **Dark mode** (`<html data-tema="oscuro">`) keeps the same six hues with lightness tuned for the dark surface `#17201b`.
-  The customer app always stays light.
+- **Dark mode** keeps the same six hues with lightness tuned for the dark surface `#17201b`.
+
+## Dark mode
+
+Dark mode ("Noche verde", night green) is for the business portal and the back office. The customer app always stays light.
+It switches on with `<html data-tema="oscuro">`: the panels follow the device setting until the person taps the sun/moon button,
+then remember the choice. The background is a green-tinted near-black, the same surface the chart colours were validated on.
+Primary buttons turn light green with dark text, because the usual brand green would sink into the background.
+Cards are separated by a hairline instead of a shadow, and the map tiles are inverted and desaturated.
+The **Dark** column in the tables above lists every value that changes; the contrast table below checks both modes.
 
 ## Components
 

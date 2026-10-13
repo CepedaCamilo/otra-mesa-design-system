@@ -1,4 +1,4 @@
-/* Otra Mesa Design System 1.4.0 · design tokens
+/* Otra Mesa Design System 1.5.0 · design tokens
    Source: github.com/CepedaCamilo/otra-mesa-design-system · see CHANGELOG.md */
 
 :root {
@@ -79,10 +79,44 @@
 }
 
 :root[data-tema="oscuro"] {
+  --fondo: #0f1612;
+  --superficie: #17201b;
+  --superficie-2: #202b25;
+  --linea: #2c3932;
+  --sombra: 0 0 0 1px var(--linea);
+  --marca: #6fbf92;
+  --titulo: #e6ece8;
+  --texto: #e6ece8;
+  --suave: #a4aea8;
+  --invertido: #6fbf92;
+  --sobre-invertido: #0e2117;
+  --acento: #ee8a4a;
+  --sobre-acento: #1d0f05;
+  --acento-suave: #3e2a1b;
+  --sobre-acento-suave: #f6bd94;
+  --acento-texto: #f2a06a;
+  --vegetariano: #6fbf92;
+  --agotado: #5c645f;
+  --peligro: #f2806f;
+  --filtro-planos: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.55);
+  --sombra-borde: 0 -1px 0 var(--linea);
+  --sombra-flotante: 0 0 0 1px var(--linea), 0 8px 28px rgb(0 0 0 / 0.5);
+  --sombra-mapa: 0 1px 6px rgb(0 0 0 / 0.6);
+
   --grafico-1: #22a56a;
   --grafico-2: #5981e0;
   --grafico-3: #dc692e;
   --grafico-4: #08a2af;
   --grafico-5: #b3880f;
   --grafico-6: #d15697;
+
+  --estado-bien: #3fb873;
+  --estado-aviso: #e0a526;
+  --estado-serio: #ee8a4a;
+  --estado-critico: var(--peligro);
+  color-scheme: dark;
 }
+
+.logo-oscuro { display: none; }
+:root[data-tema="oscuro"] .logo-claro { display: none; }
+:root[data-tema="oscuro"] .logo-oscuro { display: revert; }

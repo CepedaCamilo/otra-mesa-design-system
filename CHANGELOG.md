@@ -7,6 +7,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.5.0] · 2026-10-13
+
+### Added
+- **Dark mode "Noche verde"** for the business portal and the back office, chosen from two candidates.
+  Every colour token has a dark value under `:root[data-tema="oscuro"]`: green-tinted near-black background `#0f1612`,
+  cards `#17201b`, text `#e6ece8` (15.3:1), light-green primary buttons `#6fbf92` with dark text (7.6:1).
+  Cards use a hairline instead of a shadow; map tiles are inverted and desaturated; map controls and credits restyled.
+- **Theme switch**: `tema.js` follows the device setting until the person taps the sun/moon button, then remembers the choice
+  (`localStorage`), and updates the browser bar colour. `BotonTema.jsx` is the shared sun/moon button.
+- **White-letter logos** for dark mode (letters white, table terracotta), following the official logo 02.
+- **Dark contrast table** in this README, calculated on every export like the light one.
+
+### Notes
+- The customer app never sets `data-tema`, so it always stays light.
+- A test robot checks the switch, the memory, the logo and the contrast of every visible text in all eight back-office tabs, in both modes.
+
 ## [1.4.0] · 2026-10-13
 
 ### Added
