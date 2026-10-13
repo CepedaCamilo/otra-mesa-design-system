@@ -1,0 +1,21 @@
+{
+  "name": "otra-mesa-design-system",
+  "version": "1.3.0",
+  "description": "Design tokens and shared components of Otra Mesa.",
+  "author": "Camilo Cepeda Danies (https://camilocepedadanies.com)",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CepedaCamilo/otra-mesa-design-system.git"
+  },
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./components.css": "./components.css"
+  },
+  "files": [
+    "tokens.css",
+    "components.css",
+    "CHANGELOG.md",
+    "README.md"
+  ]
+}
