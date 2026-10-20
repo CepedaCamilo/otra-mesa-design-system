@@ -88,6 +88,7 @@
   min-height: 48px; padding: 0 20px; border: 1px solid var(--linea);
   background: var(--superficie); color: var(--texto); font-weight: 500;
 }
+:where([data-marca='yaku']) .boton-ancho { width: 100%; }
 /* Desactivado: la regla del sistema (registro 0004) con los colores de Yaku → gris, sin transparencia; secundario con borde discontinuo */
 :where([data-marca='yaku']) :is(.boton-principal, .boton-secundario):disabled { opacity: 1; cursor: default; }
 :where([data-marca='yaku']) .boton-principal:disabled { background: var(--superficie-2); color: var(--suave); }

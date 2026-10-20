@@ -7,6 +7,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.10.1] · 2026-10-20
+
+### Changed
+- **Each brand has its own catalogue.** Yaku's lives at [storybook.danies.trade/yaku](https://storybook.danies.trade/yaku/): the same
+  components with Yaku's skin, copy, logo and dark mode, its colour and type foundations read from `marcas/yaku.css`, and the pieces
+  in context (menu and dish). The *Two brands, one system* side-by-side page and the Brand switch are gone; each catalogue links to the other.
+- The accessibility robot checks both catalogues, light and dark (0 violations). No component changed.
+
 ## [1.10.0] · 2026-10-20
 
 ### Added
