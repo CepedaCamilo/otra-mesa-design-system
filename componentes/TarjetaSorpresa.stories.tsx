@@ -45,7 +45,8 @@ const meta = {
     onAbrir: () => {},
   },
   argTypes: { foto: { control: false }, linea: { control: false }, accion: { control: false }, onAbrir: { action: 'open' } },
-  decorators: [(Historia) => <div style={{ display: 'flex', width: 400 }}><Historia /></div>],
+  // Ancho fijo de móvil, salvo en la historia que va incrustada en la web (parameters.anchoCompleto)
+  decorators: [(Historia, ctx) => (ctx.parameters.anchoCompleto ? <Historia /> : <div style={{ display: 'flex', width: 400 }}><Historia /></div>)],
 } satisfies Meta<typeof TarjetaSorpresa>
 
 export default meta
@@ -73,10 +74,25 @@ export const InARow: Story = {
   decorators: [(Historia) => <div style={{ width: 390 }}><Historia /></div>],
   parameters: { controls: { disable: true } },
   render: (args) => (
-    <div style={{ display: 'flex', gap: 12, overflowX: 'auto', scrollSnapType: 'x mandatory', padding: '4px 16px 16px' }}>
+    <div style={{ display: 'flex', gap: 12, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollPaddingInline: 16, padding: '4px 16px 16px' }}>
       <TarjetaSorpresa {...args} />
       <TarjetaSorpresa {...args} nombre="Inka Brisa" foto={foto('peruana')} linea={<>Lunch surprise · {nota('4.8')}</>} cuando="Now, until 3:00 p.m. · 800 m" precio="$18.000" precioAntes="$54.000" etiqueta="2 left" />
       <TarjetaSorpresa {...args} nombre="Nuna Coffee" foto={foto('cafe')} linea="Breakfast surprise" cuando="Today 6:00–7:00 p.m. · 1.1 km" precio="$9.000" precioAntes="$27.000" etiqueta="4 left" />
+    </div>
+  ),
+}
+
+// La fila a todo lo ancho: es la que va incrustada en el caso de Otra Mesa de camilocepedadanies.com.
+export const FullWidthRow: Story = {
+  name: 'In a row · full width',
+  parameters: { layout: 'fullscreen', anchoCompleto: true, controls: { disable: true } },
+  render: (args) => (
+    <div style={{ display: 'flex', gap: 12, overflowX: 'auto', scrollSnapType: 'x mandatory', scrollPaddingInline: 16, padding: 16, background: 'var(--fondo)' }}>
+      <TarjetaSorpresa {...args} />
+      <TarjetaSorpresa {...args} nombre="Inka Brisa" foto={foto('peruana')} linea={<>Lunch surprise · {nota('4.8')}</>} cuando="Now, until 3:00 p.m. · 800 m" precio="$18.000" precioAntes="$54.000" etiqueta="2 left" />
+      <TarjetaSorpresa {...args} nombre="Crumb Bakery" foto={foto('panaderia')} linea="Bakery surprise" cuando="Today 5:15–5:45 p.m. · 1.2 km" precio="$12.000" precioAntes="$36.000" etiqueta="5 left" />
+      <TarjetaSorpresa {...args} nombre="Nuna Coffee" foto={foto('cafe')} linea={<>Breakfast surprise · {nota('4.5')}</>} cuando="Today 6:00–7:00 p.m. · 1.1 km" precio="$9.000" precioAntes="$27.000" etiqueta="4 left" />
+      <TarjetaSorpresa {...args} nombre="Mar y Brasa" foto={foto('comida-de-mar')} linea={<>Evening surprise · {nota('4.7')}</>} cuando="Today 9:00–10:00 p.m. · 2.3 km" precio="$26.000" precioAntes="$78.000" etiqueta="0 left" agotada />
     </div>
   ),
 }
