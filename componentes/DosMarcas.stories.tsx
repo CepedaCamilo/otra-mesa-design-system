@@ -20,7 +20,7 @@ const YAKU: Textos = {
 }
 
 const caja: CSSProperties = {
-  width: 360, padding: '20px 0 24px', borderRadius: 24, border: '1px solid var(--linea)', overflow: 'hidden',
+  flex: '1 1 300px', maxWidth: 360, padding: '20px 0 24px', borderRadius: 24, border: '1px solid var(--linea)', overflow: 'hidden',
   background: 'var(--fondo) var(--fondo-imagen, none)', backgroundSize: 500, color: 'var(--texto)', fontFamily: 'var(--texto-fuente)',
 }
 const fila: CSSProperties = { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', padding: '0 18px' }
