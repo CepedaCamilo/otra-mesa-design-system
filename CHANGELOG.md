@@ -7,6 +7,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.10.0] · 2026-10-20
+
+### Added
+- **A second brand: Yaku.** The same components (`Boton`, `Pestanas`, `Filtro`, `Campo`, `Segmentos`) now run
+  [Yaku](https://yaku.danies.trade/?mesa=demo), table ordering for a Peruvian–Nikkei restaurant in Hamburg, with its own skin:
+  `marcas/yaku.css` holds Yaku's tokens (light canvas and warm-black dark mode) and the component rules, switched on with
+  `data-marca="yaku"` on `<html>` or on any container. Yaku's app was migrated pixel-identical (7 screens, light and dark).
+- Shared rules travel with the components: Yaku's disabled buttons follow the system rule (grey, never faded; dashed secondary).
+- Yaku gets an accessible error colour for fields (`--peligro`, 5.4:1 light, 7.9:1 dark).
+- **Catalogue:** a *Brand* switch in the toolbar (Otra Mesa · Yaku) and a *Two brands, one system* page with both side by side.
+  The accessibility robot now checks every story in both brands, light and dark (0 violations).
+- Tests for the Yaku tokens: AA contrast for every text pair in both modes; the two dark blocks must stay identical.
+
+### Changed
+- `lucide-react` is now an optional peer dependency (only some components use icons).
+- The catalogue uses `box-sizing: border-box`, like the apps.
+
 ## [1.9.0] · 2026-10-20
 
 ### Added

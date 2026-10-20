@@ -1,0 +1,133 @@
+/* =========================================================================
+   Marca YAKU (20 oct, 1.10.0): la segunda piel del sistema de diseño.
+   Los componentes son los MISMOS que usa Otra Mesa (Boton, Pestanas, Filtro, Campo, Segmentos):
+   mismo HTML, mismo comportamiento, misma accesibilidad. Solo cambia la piel: estos tokens y estas reglas.
+
+   Se enciende con data-marca="yaku" en <html> (la app de Yaku) o en cualquier caja (el catálogo, para enseñar
+   las dos marcas una al lado de la otra). Todas las reglas van con :where(), así pesan lo mismo que las de
+   Otra Mesa y gana la que se carga después; cada regla fija TODAS sus propiedades para que no se cuele nada de la otra marca.
+   ========================================================================= */
+
+/* ---------- Tokens: modo claro (lienzo con textura, como la web de Yaku) ---------- */
+[data-marca='yaku'] {
+  --fondo: #f4efe6;
+  --fondo-imagen: url('./yaku-textura.jpg');
+  --superficie: rgb(255 253 249 / 0.78);
+  --superficie-2: rgb(234 227 215 / 0.9);
+  --linea: #ddd5c8;
+  --texto: #1a1714;
+  --suave: #6b645b;
+  --invertido: #1a1714;        /* rellenos oscuros (contador, idioma elegido) */
+  --sobre-invertido: #f4efe6;
+  --aji: #f2b33d;              /* ají amarillo: el acento en los dos modos */
+  --sobre-aji: #1a1714;
+  --aji-texto: #8a5a00;        /* el amarillo como TEXTO sobre fondo claro necesita ser más oscuro (contraste) */
+  --vegan: #1c6b3a;
+  --veggie: #5c6b1c;
+  --peligro: #b3302a;          /* error como texto (el rojo de la app, #d9534f, se queda en 3,5 sobre el lienzo) */
+  --logo-filtro: none;         /* la "Y" es negra */
+  --velo-foto: rgb(18 17 16 / 0.7);
+
+  --display: 'Td Neumann', 'Jost', serif;
+  --texto-fuente: 'Jost', system-ui, sans-serif;
+  --radio: 16px;
+  --radio-l: 26px;
+  --lado: 18px;
+  color-scheme: light;
+}
+
+/* ---------- Tokens: modo oscuro (negro cálido, sin tono verde) ----------
+   Sigue al móvil hasta que se pulsa el sol/luna (data-tema en <html>). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro'])[data-marca='yaku'], :root:not([data-tema='claro']) [data-marca='yaku'] {
+    --fondo: #121110;
+    --fondo-imagen: none;
+    --superficie: #1c1a18;
+    --superficie-2: #262320;
+    --linea: #2e2b27;
+    --texto: #f2eee6;
+    --suave: #a8a198;
+    --invertido: #f2eee6;
+    --sobre-invertido: #121110;
+    --vegan: #8fd4a5;
+    --veggie: #c9d48f;
+    --peligro: #f28b82;
+    --logo-filtro: invert(1);
+    --aji-texto: #f2b33d;
+    color-scheme: dark;
+  }
+}
+:root[data-tema='oscuro'][data-marca='yaku'], :root[data-tema='oscuro'] [data-marca='yaku'] {
+  --fondo: #121110;
+  --fondo-imagen: none;
+  --superficie: #1c1a18;
+  --superficie-2: #262320;
+  --linea: #2e2b27;
+  --texto: #f2eee6;
+  --suave: #a8a198;
+  --invertido: #f2eee6;
+  --sobre-invertido: #121110;
+  --vegan: #8fd4a5;
+  --veggie: #c9d48f;
+  --peligro: #f28b82;
+  --logo-filtro: invert(1);
+  --aji-texto: #f2b33d;
+  color-scheme: dark;
+}
+
+/* ---------- Boton: píldora amarilla (principal) y píldora con borde fino (secundario) ---------- */
+:where([data-marca='yaku']) :is(.boton-principal, .boton-secundario) {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border-radius: 999px; text-decoration: none; font-size: 16px;
+}
+:where([data-marca='yaku']) .boton-principal {
+  display: flex; min-height: 54px; padding: 0 24px; border: none;
+  background: var(--aji); color: var(--sobre-aji); font-weight: 600;
+}
+:where([data-marca='yaku']) .boton-secundario {
+  min-height: 48px; padding: 0 20px; border: 1px solid var(--linea);
+  background: var(--superficie); color: var(--texto); font-weight: 500;
+}
+/* Desactivado: la regla del sistema (registro 0004) con los colores de Yaku → gris, sin transparencia; secundario con borde discontinuo */
+:where([data-marca='yaku']) :is(.boton-principal, .boton-secundario):disabled { opacity: 1; cursor: default; }
+:where([data-marca='yaku']) .boton-principal:disabled { background: var(--superficie-2); color: var(--suave); }
+:where([data-marca='yaku']) .boton-secundario:disabled { border-style: dashed; border-color: var(--suave); color: var(--suave); }
+
+/* ---------- Pestanas: las secciones de la carta, pegadas arriba; la elegida con raya de ají ---------- */
+:where([data-marca='yaku']) .pestanas {
+  position: sticky; top: 0; z-index: 3; display: flex; gap: 22px; padding: 16px var(--lado) 0; margin-top: 8px;
+  overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+  background: var(--fondo) var(--fondo-imagen); background-size: 500px; border-bottom: 1px solid var(--linea);
+}
+:where([data-marca='yaku']) .pestanas button {
+  flex-shrink: 0; padding: 0 0 12px; border: none; border-bottom: 2px solid transparent; background: none;
+  color: var(--suave); font-size: 15px; font-weight: 400;
+}
+:where([data-marca='yaku']) .pestanas button[aria-current='true'] { color: var(--texto); font-weight: 600; border-bottom-color: var(--aji); }
+
+/* ---------- Filtro: borde discontinuo apagado; encendido, borde entero en verde vegano ---------- */
+:where([data-marca='yaku']) .filtro {
+  min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px dashed var(--suave);
+  background: transparent; color: inherit; font-size: 13px; font-weight: 400;
+}
+:where([data-marca='yaku']) .filtro[aria-pressed='true'] { border-style: solid; border-color: var(--vegan); background: transparent; color: var(--vegan); }
+
+/* ---------- Campo: etiqueta pequeña y campo de lienzo ---------- */
+:where([data-marca='yaku']) .campo { display: flex; flex-direction: column; gap: 12px; }
+:where([data-marca='yaku']) .campo > label { margin-top: 4px; font-size: 13px; font-weight: 500; }
+:where([data-marca='yaku']) .campo :where(input, select, textarea) {
+  width: 100%; min-height: 48px; padding: 0 14px; border-radius: var(--radio);
+  border: 1px solid var(--linea); background: var(--superficie); color: var(--texto); font-size: 16px;
+}
+:where([data-marca='yaku']) .campo :where(textarea) { padding: 12px 14px; resize: vertical; }
+:where([data-marca='yaku']) .campo :where([aria-invalid='true']) { border-color: var(--peligro); }
+:where([data-marca='yaku']) .campo-ayuda { margin: 0; font-size: 12px; color: var(--suave); }
+:where([data-marca='yaku']) .campo-error { margin: 0; font-size: 13px; font-weight: 500; color: var(--peligro); }
+
+/* ---------- Segmentos: el selector DE · EN, pequeño; la opción elegida rellena en oscuro ---------- */
+:where([data-marca='yaku']) .segmentos { display: flex; padding: 3px; border-radius: 999px; background: var(--superficie-2); font-size: 12px; font-weight: 500; }
+:where([data-marca='yaku']) .segmentos button {
+  min-height: 30px; min-width: 38px; padding: 0 10px; border: none; border-radius: 999px;
+  background: transparent; color: inherit; font-weight: inherit;
+}
+:where([data-marca='yaku']) .segmentos button[aria-pressed='true'] { background: var(--invertido); color: var(--sobre-invertido); }

@@ -1,4 +1,4 @@
-/* Otra Mesa Design System 1.9.0 · shared components
+/* Otra Mesa Design System 1.10.0 · shared components
    Source: github.com/CepedaCamilo/otra-mesa-design-system · see CHANGELOG.md */
 
 .boton-principal, .boton-secundario { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-8);

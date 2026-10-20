@@ -5,7 +5,7 @@
 The design system behind [Otra Mesa](https://otramesa.danies.trade), a food-rescue platform for restaurants
 in Barranquilla, Colombia: a customer app, a business portal and a back office, all built on these tokens.
 
-**Version 1.9.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
+**Version 1.10.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
 
 Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com), product and brand designer in Hamburg.
 
@@ -224,6 +224,15 @@ The **Dark** column in the tables above lists every value that changes; the cont
 
 Each one is used by the real apps: buttons, cards, fields and ratings in the customer app, the business portal and the back office
 come from here. A component knows nothing about the API or languages — it receives ready-made text — so it works anywhere.
+
+## Two brands, one system
+
+Since 1.10.0 the same components also run [Yaku](https://yaku.danies.trade/?mesa=demo), table ordering for a Peruvian–Nikkei
+restaurant in Hamburg. Markup, behaviour, keyboard and accessibility are shared and tested once; a brand is only a skin —
+its tokens and one CSS file, [`marcas/yaku.css`](marcas/yaku.css), switched on with `data-marca="yaku"`
+(Yaku: canvas texture, ají yellow, Jost, its own dark mode). Shared rules travel with the components: a disabled button
+is grey, never faded, in both brands. See them side by side in the
+[catalogue](https://storybook.danies.trade/?path=/story/brands-two-brands-one-system--side-by-side), or use its Brand switch.
 
 ## Quality
 

@@ -1,4 +1,5 @@
 /* El "suelo" de las apps (lo que cada app pone en su estilos.css), para que los componentes se vean igual que dentro de ellas. */
+*, *::before, *::after { box-sizing: border-box; } /* como en las apps */
 body { background: var(--fondo); color: var(--texto); font-family: var(--texto-fuente); font-size: var(--letra-base); line-height: 1.45; -webkit-font-smoothing: antialiased; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; border: none; background: none; padding: 0; }

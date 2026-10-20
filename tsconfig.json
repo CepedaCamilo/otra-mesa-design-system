@@ -23,6 +23,7 @@
     "componentes",
     "fundamentos",
     "pruebas",
+    "marcas",
     ".storybook/*.ts",
     ".storybook/*.tsx"
   ]
