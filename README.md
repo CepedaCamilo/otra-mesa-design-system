@@ -1,9 +1,11 @@
 # Otra Mesa Design System
 
+[![CI](https://github.com/CepedaCamilo/otra-mesa-design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/CepedaCamilo/otra-mesa-design-system/actions/workflows/ci.yml) [![Catalogue](https://img.shields.io/badge/catalogue-storybook.danies.trade-2f6b4a)](https://storybook.danies.trade)
+
 The design system behind [Otra Mesa](https://otramesa.danies.trade), a food-rescue platform for restaurants
 in Barranquilla, Colombia: a customer app, a business portal and a back office, all built on these tokens.
 
-**Version 1.5.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
+**Version 1.9.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
 
 Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com), product and brand designer in Hamburg.
 
@@ -18,23 +20,27 @@ Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com), pr
   every time this repository is generated.
 - **One source of truth.** The three apps import the same file, so a change here changes all of them.
 
+**Live catalogue: [storybook.danies.trade](https://storybook.danies.trade)** — every component in light and dark, with its
+accessibility check, plus the foundations (colour, charts, type, space).
+
 ## Usage
 
 ```css
-@import 'tokens.css';      /* custom properties on :root */
-@import 'components.css';  /* shared pieces: Google button, "or" divider, stars */
-
-.button {
-  min-height: var(--alto-control);
-  padding: 0 var(--e-16);
-  border-radius: var(--radio-pildora);
-  background: var(--marca);
-  color: var(--sobre-invertido);
-  font: var(--display-peso) var(--letra-grande) / 1.2 var(--display);
-}
+@import 'tokens.css';      /* custom properties on :root (light, and dark under [data-tema="oscuro"]) */
+@import 'components.css';  /* the styles of the shared components */
 ```
 
-Token names are in **Spanish**, the language the product is built in. The tables below give the English meaning of each one.
+```tsx
+import Boton from 'otra-mesa-design-system/Boton'
+import TarjetaSorpresa from 'otra-mesa-design-system/TarjetaSorpresa'
+
+<Boton onClick={reserve}>Reserve</Boton>
+<Boton variante="icono" aria-label="Close"><X /></Boton>   {/* aria-label is required: the types refuse it otherwise */}
+```
+
+Components ship as TypeScript source (React 19), so they need a bundler that understands `.tsx` (Vite, Next…).
+
+Token names, component names and code comments are in **Spanish**, the language the product is built in. The tables below give the English meaning of each token; the catalogue documents every component in English.
 
 ## Tokens
 
@@ -202,8 +208,38 @@ The **Dark** column in the tables above lists every value that changes; the cont
 
 ## Components
 
-`components.css` holds the pieces that used to be copied in all three apps:
-`.boton-google` (Google sign-in button), `.separador-o` (the "or" divider) and `.estrellas` / `.estrellas-vacias` (rating stars).
+| Component | What it is |
+|---|---|
+| [`Boton`](componentes/Boton.tsx) | The button: `principal`, `secundario`, `icono`. Icon-only buttons require an `aria-label`; never submits a form by accident. |
+| [`BotonGoogle`](componentes/BotonGoogle.tsx) | "Continue with Google" skin with the "or with your email" divider. |
+| [`Campo`](componentes/Campo.tsx) | A complete form field that wires label, help and error to the control. |
+| [`ElegirEstrellas`](componentes/ElegirEstrellas.tsx) | Give a score: a real radio group with arrow keys and 44 px stars. |
+| [`Estrellas`](componentes/Estrellas.tsx) | Read a score (★★★★☆) with a required accessible label. |
+| [`Etiqueta`](componentes/Etiqueta.tsx) | Small pill label: `aviso`, `blanca`, `agotada`. |
+| [`Filtro`](componentes/Filtro.tsx) | On/off filter chip. |
+| [`Pestanas`](componentes/Pestanas.tsx) | Sticky category tabs. |
+| [`ResumenValoraciones`](componentes/ResumenValoraciones.tsx) | "How people rate it": big score and 5→1 bars. |
+| [`Segmentos`](componentes/Segmentos.tsx) | Pick one of 2–4 options. Generic over text, number or yes/no values. |
+| [`TarjetaSorpresa`](componentes/TarjetaSorpresa.tsx) | The surprise-bag card of the customer app (row and featured). Text and photo come from outside. |
+
+Each one is used by the real apps: buttons, cards, fields and ratings in the customer app, the business portal and the back office
+come from here. A component knows nothing about the API or languages — it receives ready-made text — so it works anywhere.
+
+## Quality
+
+Every push runs the same checks as the private monorepo ([CI](.github/workflows/ci.yml)):
+
+- **Types** (`npm run tipos`): strict TypeScript, plus type tests that must fail — e.g. an icon-only button without an accessible
+  name, or a segmented control whose value does not match its options.
+- **Unit tests** (`npm test`, Vitest + Testing Library): behaviour, keyboard (arrow keys in the rating control), ARIA wiring
+  (labels, descriptions, pressed states) and an axe accessibility check for every component; token values and contrast ratios.
+- **Catalogue build** (`npm run build-storybook`). The published catalogue is also scanned with axe (WCAG 2.2 AA) in light and dark.
+
+```bash
+npm install
+npm run storybook   # catalogue on http://localhost:6006
+npm test
+```
 
 ## Versioning
 
@@ -214,8 +250,9 @@ MAJOR removes or renames a token, so the apps have to adapt.
 
 ## How this repository is made
 
-The source lives in the private Otra Mesa monorepo (`paquetes/diseno`). This public copy is generated by a script
-that strips the internal comments and rebuilds this README from the real token values, so it cannot drift from the code.
+The source lives in the private Otra Mesa monorepo (`paquetes/diseno`), where the three apps use it. This public copy is
+generated by a script: it copies the components, stories and tests, strips the internal comments from the CSS and rebuilds this
+README from the real token values, so it cannot drift from the code.
 
 ## License
 

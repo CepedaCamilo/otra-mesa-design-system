@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Paleta, Contraste } from './Fundamentos'
+
+<Meta title="Foundations/Colour" />
+
+# Colour
+
+Clean and white, with **one text colour** — a near-black with a hint of green. The logo green carries primary actions and active
+states; the cheerful terracotta is kept for **small details only** (stars, underlines, map dots). Every colour has a light and a dark
+value. Dark mode ("Noche verde") is used by the business portal and the back office; the customer app is always light.
+
+<Paleta grupo="Color" />
+
+## Contrast, calculated
+
+Every text-on-background pair the apps really use, measured with the WCAG 2.2 formula from the values in `tokens.css`.
+Body text needs 4.5:1; icons and large text need 3:1.
+
+<Contraste />

@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# Otra Mesa Design System
+
+The living catalogue of the components behind **Otra Mesa**, a food-rescue platform for Barranquilla with three apps:
+the customer app, the business portal and the back office. Every component here is the real one the apps use.
+
+**How it is built**
+
+- **Tokens first.** Colour, type, space, radius, shadow and height come from one `tokens.css`, with a light and a dark value for every colour.
+- **One component, three apps.** A change here changes every app at once — no copies drifting apart.
+- **TypeScript as a guard rail.** The component types make wrong usages impossible, including accessibility rules
+  (an icon-only button cannot exist without an accessible name).
+- **Checked in light and dark.** Use the theme switch in the toolbar. Every story runs an automatic accessibility check (axe);
+  see the **Accessibility** panel.
+
+Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com) · Tokens on [GitHub](https://github.com/CepedaCamilo/otra-mesa-design-system).

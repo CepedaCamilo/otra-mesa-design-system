@@ -7,6 +7,68 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.9.0] · 2026-10-20
+
+### Added
+- **The public repository now holds the code**, not only the CSS: every React + TypeScript component, the Storybook catalogue
+  (foundations and stories), the unit tests and a CI workflow (types, tests and catalogue build on every push).
+  A minor version on purpose: nothing was removed or renamed, so nothing breaks for anyone using the CSS.
+- **Unit tests** (Vitest + Testing Library): behaviour, keyboard, ARIA wiring and an axe check for every component;
+  token values and contrast ratios; the light/dark theme logic. **Type tests**: wrong usages that must not compile.
+
+### Changed
+- All text, number, select and textarea fields in the three apps now use `Campo` (27 fields). Same position, size and colours;
+  typed text uses the regular weight.
+
+## [1.8.0] · 2026-10-20
+
+### Added
+- **`BotonGoogle`** — "Continue with Google" skin (the coloured G and the "or with your email" divider). The logic moved to one
+  shared file (`@otra-mesa/comun/EntrarConGoogle`): **three identical copies became one**.
+- **`Estrellas`** (read a score; the accessible label is required), **`ElegirEstrellas`** (give a score: a real radio group with
+  arrow keys, Home/End and 44 px stars) and **`ResumenValoraciones`** ("How people rate it": big score + 5→1 bars).
+- **`Segmentos`** — pick one of 2–4 options. Generic over text, number or yes/no values; `ancho` for full width.
+- **`Pestanas`** — sticky category tabs. **`Filtro`** — on/off filter chip.
+- **`Campo`** — a complete form field that links label, help and error to the control (`htmlFor`, `aria-describedby`, `aria-invalid`).
+- `.solo-lector` helper for text that is heard but not seen.
+
+### Changed
+- Styles for ratings, tabs, filters and segments moved from the apps into `components.css`. Pixel-identical, checked before and
+  after on Discover, the detail screen, Explore and both sign-in screens. `.barra` became `.valoradas-barra` (in the business portal
+  `.barra` is the bottom tab bar).
+- Sign-in inputs in the back office now use 16 px text (was 14 px), so iOS never zooms in.
+
+## [1.7.0] · 2026-10-20
+
+### Added
+- **`TarjetaSorpresa` component** — the surprise-bag card of the customer app (Discover rows and "Featured surprises").
+  It knows nothing about the API or languages: it receives ready-made text and the photo as a slot. The whole card opens
+  the details; the favourites heart is a separate button on top. Customer app only, so always light.
+- **`Etiqueta` component** — small pill label: `aviso` (peach, 5.5:1), `blanca` (on photos) and `agotada` (sold-out grey, 4.9:1).
+- **Catalogue foundations**: Colour (light and dark, with calculated contrast), Charts "Caribe" (with a colour-blindness
+  simulation), Typography and Space & shape — all read straight from `tokens.css`, so they never fall behind.
+
+### Changed
+- Card, label, rating and round-photo-button styles moved from the customer app into `components.css`. Pixel-identical
+  (every card element compared before and after on Discover, the detail screen and Explore).
+- Token descriptions now live in `descripciones.ts`, shared by the public README and the catalogue.
+
+## [1.6.0] · 2026-10-16
+
+### Added
+- **`Boton` component** (React + TypeScript): variants `principal`, `secundario` and `icono`; sizes only where they exist
+  (`pequeno` for the primary button, `grande` for the icon button); `ancho` for full width. An icon-only button **requires
+  an `aria-label`**: the type checker refuses it otherwise, so it can never ship without an accessible name.
+  `type="button"` by default, so a button never submits a form by accident (`type="submit"` when it should).
+- `tema.ts` and `BotonTema.tsx` are now TypeScript (strict), checked with `npm run tipos`.
+
+### Changed
+- **One button style for all three apps.** Button styles were copied in each app with small differences; they now live once
+  in `components.css`. Base: centred content, icon button 32 px and large 44 px (comfortable touch target).
+- **Disabled buttons no longer fade out.** A semi-transparent green still looked active, especially in dark mode.
+  Disabled primary: light grey with muted text. Disabled secondary: **dashed grey border** with muted text. Disabled icon: muted icon.
+- The secondary button now has a gap between icon and label in every app.
+
 ## [1.5.0] · 2026-10-13
 
 ### Added
