@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Accessibility" />
+
+# Accessibility
+
+The target is **WCAG 2.2, level AA** — the level European law asks for. Accessibility lives in the components, so every app that
+uses them gets it for free, and the rules are checked by machines on every change.
+
+## What every component guarantees
+
+- **Contrast** — Text 4.5:1, large text and focus rings 3:1. Every token pair is measured in light and dark (see *Foundations › Colour*).
+- **Names** — Every control says what it does. Labels are linked to fields; an icon-only button **cannot compile** without `aria-label`.
+- **Keyboard** — Everything works without a mouse. Tab reaches every control in visual order; Enter and Space press it; star ratings use the arrow keys.
+- **Focus** — You always see where you are. A 3 px ring, 2 px away from the control, only when using the keyboard (`:focus-visible`).
+- **Target size** — Easy to hit. At least 24 × 24 px (WCAG 2.5.8); buttons and stars use 44 px.
+- **State** — Not by colour alone. Pressed filters and segments are announced (`aria-pressed`); a disabled secondary button also changes shape (dashed).
+- **Errors** — Read out, not just red. Field errors are linked to the field and announced (`aria-invalid`, `aria-describedby`, `role="alert"`).
+- **Zoom** — Text stays readable. Fields use 16 px text, so iOS never zooms in by itself.
+
+## How it is tested
+
+1. **Types** — wrong usages do not compile (`npm run tipos`).
+2. **Unit tests** — each component runs axe and a keyboard walk-through in a simulated browser (`npm test`).
+3. **Catalogue robot** — every story, light and dark, in a real browser: axe (WCAG 2.2 AA, including target size), then a Tab
+   walk-through that checks the focus ring is visible with at least 3:1 contrast.
+4. **People** — a screen-reader pass (VoiceOver on iPhone and Mac) before each release of an app.
+
+Machines catch about a third of accessibility problems; the rest needs people. That is why step 4 exists.

@@ -75,6 +75,9 @@
   color-scheme: dark;
 }
 
+/* ---------- Foco del teclado: el ají OSCURO en claro (5,2:1 sobre el lienzo; el ají normal daba 1,6:1 y no se veía), el ají en oscuro ---------- */
+:where([data-marca='yaku']) :focus-visible { outline: 3px solid var(--aji-texto); outline-offset: 2px; }
+
 /* ---------- Boton: píldora amarilla (principal) y píldora con borde fino (secundario) ---------- */
 :where([data-marca='yaku']) :is(.boton-principal, .boton-secundario) {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;

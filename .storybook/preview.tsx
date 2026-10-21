@@ -17,7 +17,7 @@ const preview: Preview = {
     controls: { expanded: true },
     // Si una historia no pasa el revisor de accesibilidad, sale en rojo (no solo un aviso).
     a11y: { test: 'error' },
-    options: { storySort: { order: ['Introduction', 'Foundations', ['Colour', 'Charts', 'Typography', 'Space & shape'], 'Components'] } },
+    options: { storySort: { order: ['Introduction', 'Accessibility', 'Foundations', ['Colour', 'Charts', 'Typography', 'Space & shape'], 'Components'] } },
   },
   tags: ['autodocs'],
 }

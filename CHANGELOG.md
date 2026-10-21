@@ -7,6 +7,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.11.0] · 2026-10-21
+
+### Added
+- **Accessibility, systematically (WCAG 2.2 AA).** The keyboard focus ring now lives in the system (`piezas.css`): a 3 px ring, 2 px
+  away from the control, only for keyboard users. Before, each app had its own copy.
+- **Keyboard tests** for every interactive component: Tab order, Enter and Space, arrow keys on the star rating, disabled buttons skipped.
+- **Focus check in the catalogue robot:** every story is walked through with Tab, light and dark; each control must show a ring with at
+  least 3:1 contrast against what is behind it.
+- An **Accessibility** page in both catalogues: what every component guarantees and how it is tested.
+
+### Fixed
+- **Yaku's focus ring was almost invisible** on the light canvas: bright ají at 1.6:1. It now uses the dark ají there (5.2:1) and keeps
+  the bright ají on the warm black (10.1:1). Found by the new robot check.
+
 ## [1.10.1] · 2026-10-20
 
 ### Changed

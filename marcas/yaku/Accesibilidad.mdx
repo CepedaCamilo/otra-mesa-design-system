@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Accessibility" />
+
+# Accessibility
+
+Yaku uses the same components as Otra Mesa, so it inherits the same guarantees — names, keyboard, target size, announced states
+and errors — and the same machine checks, run on every story of this catalogue in light and dark. What changes is the skin,
+so **the skin is checked too**: every colour pair Yaku uses is measured (see *Foundations › Colour & type*).
+
+## A fix the robot found
+
+The keyboard focus ring used to be the bright *ají amarillo*. On the light canvas it measured **1.6:1** — almost invisible for
+someone navigating with a keyboard (WCAG asks for 3:1). It now uses the dark ají on the canvas (**5.2:1**) and stays bright
+ají on the warm black (10.1:1). Same accent, readable in both moods.
+
+## How it is tested
+
+- **Unit tests** — axe and a keyboard walk-through for every component.
+- **Catalogue robot** — every story, light and dark: axe (WCAG 2.2 AA), then Tab through every control checking the focus ring.
+- **People** — a VoiceOver pass on iPhone before each release of the app.
+
+[Switch to the Otra Mesa catalogue ↗](https://storybook.danies.trade/?path=/docs/accessibility--docs)

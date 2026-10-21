@@ -5,7 +5,7 @@
 The design system behind [Otra Mesa](https://otramesa.danies.trade), a food-rescue platform for restaurants
 in Barranquilla, Colombia: a customer app, a business portal and a back office, all built on these tokens.
 
-**Version 1.10.1** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
+**Version 1.11.0** · [Changelog](CHANGELOG.md) · [Full documentation (PDF)](https://camilocepedadanies.com/pdf/otra-mesa-design-system.pdf)
 
 Designed and built by [Camilo Cepeda Danies](https://camilocepedadanies.com), product and brand designer in Hamburg.
 
