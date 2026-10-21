@@ -1,6 +1,6 @@
 {
   "name": "otra-mesa-design-system",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "description": "Design tokens and React components of Otra Mesa, with a live catalogue, tests and CI.",
   "author": "Camilo Cepeda Danies (https://camilocepedadanies.com)",
   "license": "UNLICENSED",

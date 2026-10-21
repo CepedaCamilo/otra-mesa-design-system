@@ -7,6 +7,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.11.2] · 2026-10-21
+
+### Fixed
+- **Focus ring on maps.** On street maps (tiles of every colour) the terracotta ring measured 2.6:1. Inside a map the ring is now ink
+  with a gap in the background colour, so it shows on any tile. Found by the shared accessibility auditor on Otra Mesa.
+
 ## [1.11.1] · 2026-10-21
 
 ### Fixed
