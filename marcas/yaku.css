@@ -77,6 +77,7 @@
 
 /* ---------- Foco del teclado: el ají OSCURO en claro (5,2:1 sobre el lienzo; el ají normal daba 1,6:1 y no se veía), el ají en oscuro ---------- */
 :where([data-marca='yaku']) :focus-visible { outline: 3px solid var(--aji-texto); outline-offset: 2px; }
+:where([data-marca='yaku']) :is(h1, h2, h3)[tabindex='-1']:focus { outline: none; } /* título enfocado por la app: no es un control */
 
 /* ---------- Boton: píldora amarilla (principal) y píldora con borde fino (secundario) ---------- */
 :where([data-marca='yaku']) :is(.boton-principal, .boton-secundario) {

@@ -7,6 +7,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versions: [S
 
 _Nothing yet._
 
+## [1.11.1] · 2026-10-21
+
+### Fixed
+- A heading that an app focuses on purpose (so screen readers start on the new screen's title) no longer shows the focus ring:
+  it is not a control, and with VoiceOver on it looked as if two things were selected at once. Controls keep their ring — including
+  the ones that use `tabindex="-1"`, like the star rating. Found while testing Yaku with VoiceOver on an iPhone.
+
 ## [1.11.0] · 2026-10-21
 
 ### Added

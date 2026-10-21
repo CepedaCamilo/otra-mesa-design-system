@@ -1,7 +1,9 @@
-/* Otra Mesa Design System 1.11.0 · shared components
+/* Otra Mesa Design System 1.11.1 · shared components
    Source: github.com/CepedaCamilo/otra-mesa-design-system · see CHANGELOG.md */
 
 :focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+
+:is(h1, h2, h3)[tabindex='-1']:focus { outline: none; }
 
 .boton-principal, .boton-secundario { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-8);
   border-radius: var(--radio-pildora); text-decoration: none; }
