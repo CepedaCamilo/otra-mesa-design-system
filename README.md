@@ -257,6 +257,17 @@ PATCH fixes something without changing the look on purpose (e.g. a contrast that
 MINOR adds tokens and keeps the old ones working (e.g. chart colours).
 MAJOR removes or renames a token, so the apps have to adapt.
 
+## Design decisions
+
+Every big choice is written down on one page — what was decided, why, and what was given up — as an
+[architecture decision record](https://adr.github.io). The three about the design system are public:
+
+| No. | Decision |
+|---|---|
+| [0003](docs/decisions/0003-in-house-design-system.md) | An in-house design system |
+| [0004](docs/decisions/0004-disabled-buttons-go-grey.md) | Disabled buttons go grey, not transparent |
+| [0005](docs/decisions/0005-customer-app-light-tools-dark.md) | Customer app always light; business tools with a dark mode |
+
 ## How this repository is made
 
 The source lives in the private Otra Mesa monorepo (`paquetes/diseno`), where the three apps use it. This public copy is
